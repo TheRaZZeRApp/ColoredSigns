@@ -1,8 +1,6 @@
 package com.therazzerapp.coloredsigns.listener;
 
 import net.canarymod.api.chat.ChatComponent;
-import net.canarymod.api.entity.living.humanoid.Player;
-import net.canarymod.api.world.blocks.Sign;
 import net.canarymod.chat.ChatFormat;
 import net.canarymod.hook.HookHandler;
 import net.canarymod.hook.player.SignChangeHook;
@@ -20,14 +18,10 @@ import net.canarymod.plugin.PluginListener;
 public class SignListener implements PluginListener {
     @HookHandler
     public void onSignCreate(SignChangeHook hook){
-
-        Sign sign = hook.getSign();
-        Player player = hook.getPlayer();
-
-        if (player.hasPermission("coloredsign.create")){
-            for(int x=0;x < sign.getLines().length;x++){
-                if (sign.getComponentOnLine(x) != null){
-                    sign.setComponentOnLine(getColoredLine(sign.getComponentOnLine(x)),x);
+        if (hook.getPlayer().hasPermission("coloredsign.create")){
+            for(int x=0;x < hook.getSign().getLines().length;x++){
+                if (hook.getSign().getComponentOnLine(x) != null){
+                    hook.getSign().setComponentOnLine(getColoredLine(hook.getSign().getComponentOnLine(x)),x);
                 }
             }
         }
