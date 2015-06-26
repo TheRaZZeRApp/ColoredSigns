@@ -1,4 +1,4 @@
-package com.therazzerapp.coloredsigns.listener;
+package de.therazzerapp.coloredsigns.listener;
 
 import net.canarymod.api.chat.ChatComponent;
 import net.canarymod.chat.ChatFormat;

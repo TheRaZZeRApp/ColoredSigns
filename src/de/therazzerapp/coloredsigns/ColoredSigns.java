@@ -1,6 +1,6 @@
-package com.therazzerapp.coloredsigns;
+package de.therazzerapp.coloredsigns;
 
-import com.therazzerapp.coloredsigns.listener.SignListener;
+import de.therazzerapp.coloredsigns.listener.SignListener;
 import net.canarymod.Canary;
 import net.canarymod.plugin.Plugin;
 
